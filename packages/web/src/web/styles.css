@@ -1,0 +1,101 @@
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+@import "@fontsource/plus-jakarta-sans/800.css";
+@import "@fontsource/dm-sans/300.css";
+@import "@fontsource/dm-sans/400.css";
+@import "@fontsource/dm-sans/500.css";
+@import "@fontsource/dm-sans/600.css";
+
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans: "DM Sans", system-ui, sans-serif;
+
+  --color-ink: #0a0a0a;
+  --color-surface: #111111;
+  --color-card: #161616;
+  --color-stone: #f5f3f0;
+  --color-white: #ffffff;
+  --color-gold: #c9a96e;
+  --color-muted: #6b6b6b;
+  --color-border: #222222;
+  --color-overlay: rgba(10,10,10,0.55);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-ink);
+  color: var(--color-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}
+
+.text-ink { color: var(--color-ink); }
+.text-stone { color: var(--color-stone); }
+.text-gold { color: var(--color-gold); }
+.text-muted { color: var(--color-muted); }
+
+.bg-ink { background-color: var(--color-ink); }
+.bg-surface { background-color: var(--color-surface); }
+.bg-card { background-color: var(--color-card); }
+.bg-stone { background-color: var(--color-stone); }
+.bg-gold { background-color: var(--color-gold); }
+
+.border-card { border-color: var(--color-border); }
+.border-gold { border-color: var(--color-gold); }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #c9a96e, #e8c98a, #c9a96e);
+  background-size: 300% 300%;
+  animation: gradientShift 4s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.7s ease forwards;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
