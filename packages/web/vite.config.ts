@@ -19,6 +19,8 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		server: {
+			port: Number(process.env.PORT) || 3020,
+			strictPort: true,
 			allowedHosts: true,
 			hmr: { overlay: false, },
 			cors: false
